@@ -1,7 +1,7 @@
 package Homework1;
 
 
-public class Rectangle {
+public class Rectangle implements ICalculateArea, IConst, IDefautl {
     private int width;
     private int height;
     Rectangle(int width, int height){
@@ -36,4 +36,31 @@ public class Rectangle {
     int calculatePerimeter () {
         return (2 *(getWidth() * getHeight() / 2));
     }
+
+    @Override
+    public void print() {
+        System.out.println(calculateArea());
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Периметр равен: " + WIDTH * HEIGHT);
+        widthHeight wh = new widthHeight();
+        System.out.println("ширина: " + wh.even());
+        System.out.println("высота: " + wh.odd());
+    }
+
+    public static class widthHeight implements IDefautl{
+        @Override
+        public int even() {
+            return 24;
+        }
+
+        @Override
+        public int odd() {
+            return 6;
+        }
+    }
+
+
+
 }
